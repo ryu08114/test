@@ -1,0 +1,35 @@
+//以下不要
+header,footer {
+  background-color: #eee;
+  height: 100px;
+}
+header {
+  display: flex;
+  align-items:center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav {
+  width: 500px;
+  margin: 0 auto;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}
+section {
+  width: 700px;
+  margin: 150px auto;
+  background-color: #eee;
+  height: 300px;
+}
+.nav2 {
+  margin-top: 150px;
+}
