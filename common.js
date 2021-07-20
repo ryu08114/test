@@ -2,27 +2,24 @@ $(function() {
   var hash = location.hash,
       headerHeight = 0;
   
-  //headerがfixedの場合、headerの高さを取得
-  if($('header').css('position') == 'fixed') {
+  //headerが追従する場合、headerの高さを取得（追従しない場合は不要）
+  if($('header').length > 0) {
     headerHeight = $('header').outerHeight();
   }
       
   //ページ内遷移
   $('a[href^="#"]').on('click',function() {
-    var href = $(this).attr('href'),
-        target = $(href);
-    scroll(target);
+    scrollToLink($($(this).attr('href')));
   })
   //外部ページから遷移（ハッシュがある場合）
   if(hash) {
     $('body,html').stop().scrollTop(0);
-    var target = $(hash);
     setTimeout(function() {
-      scroll(target);
+      scrollToLink($(hash));
     },400)
   }
   //スクロールする処理を関数化
-  function scroll(target) {
+  function scrollToLink(target) {
     var targetPos = target.offset().top - headerHeight;
     $('body,html').stop().animate({scrollTop:targetPos},400);
   }
