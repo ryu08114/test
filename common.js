@@ -17,6 +17,6 @@ $(function() {
         targetPos = target.offset().top - headerHeight;
     setTimeout(function() {
       $('body,html').animate({scrollTop:targetPos},400);
-    },400)
+    },2000)
   }
 })
