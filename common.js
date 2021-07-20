@@ -21,7 +21,7 @@ $(function() {
         targetPos = target.offset().top - headerHeight;
     
     setTimeout(function() {
-      scroll(targetPos);
+      $('body,html').stop().animate({scrollTop:targetPos},400);
     },400)
   }
   function scroll(targetPos) {
