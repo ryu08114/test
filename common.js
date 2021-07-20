@@ -13,7 +13,7 @@ $(function() {
   })
   //外部ページから遷移（ハッシュがある場合）
   if(hash) {
-    $('body,html').stop().scrollTop(0);
+    $('body,html').stop().animate({scrollTop:0},4);
     setTimeout(function() {
       scrollToLink($(hash));
     },400)
